@@ -1,0 +1,115 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribuição / build
+build/
+dist/
+.eggs/
+*.egg-info/
+*.egg
+
+# Logs
+*.log
+logs/
+
+# =========================
+# Virtual Environment
+# =========================
+.venv/
+venv/
+env/
+ENV/
+
+# =========================
+# Poetry
+# =========================
+poetry.lock
+
+# (opcional: mantenha se quiser reprodutibilidade)
+# Se estiver trabalhando em time, talvez NÃO ignorar
+
+# =========================
+# Environment variables
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# Banco / arquivos locais
+# =========================
+*.db
+*.sqlite3
+
+# =========================
+# Testes / cobertura
+# =========================
+.coverage
+htmlcov/
+.pytest_cache/
+
+# =========================
+# Mypy / Ruff / Linters
+# =========================
+.mypy_cache/
+.ruff_cache/
+.dmypy.json
+
+# =========================
+# Alembic
+# =========================
+alembic/versions/*.pyc
+
+# =========================
+# IDEs
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+# OS
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Docker
+# =========================
+*.pid
+*.seed
+*.pid.lock
+
+# =========================
+# Celery
+# =========================
+celerybeat-schedule
+celerybeat.pid
+
+# =========================
+# Redis dump
+# =========================
+dump.rdb
+appendonly.aof
+
+# =========================
+# Node (caso tenha frontend no mesmo repo)
+# =========================
+node_modules/
+dist/
+build/
+
+# =========================
+# Arquivos temporários
+# =========================
+*.tmp
+*.bak
+*.old
