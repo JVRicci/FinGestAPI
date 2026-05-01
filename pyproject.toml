@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "fingestapi"
+name = "src"
 version = "0.1.0"
 description = ""
 authors = ["Your Name <you@example.com>"]
@@ -43,3 +43,6 @@ pre-commit = "^4.6.0"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+dev = "src.main:dev"
