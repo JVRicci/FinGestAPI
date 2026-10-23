@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 
-from src.db.databse import get_db
+from src.db.database import get_db
 from src.schemas.transaction import TransactionCreate, TransactionResponse
 from src.services.transaction_service import TransactionService
 

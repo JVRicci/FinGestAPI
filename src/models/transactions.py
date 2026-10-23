@@ -1,8 +1,9 @@
-from datetime import datetime
+from datetime import datetime, timezone
 from decimal import Decimal
 from enum import Enum
 
-from sqlalchemy import DateTime, Enum as SqlEnum, Numeric, String
+from sqlalchemy import DateTime, Numeric, String
+from sqlalchemy import Enum as SqlEnum
 from sqlalchemy.orm import Mapped, mapped_column
 
 from src.db.base import Base
@@ -25,5 +26,10 @@ class Transaction(Base):
     )
     category: Mapped[str] = mapped_column(String(100))
     created_at: Mapped[datetime] = mapped_column(
-        DateTime, default=datetime.timezone.utc.now
+        DateTime, default=datetime.now(timezone.utc)
+    )
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime,
+        default=datetime.now(timezone.utc),
+        onupdate=datetime.now(timezone.utc),
     )

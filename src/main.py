@@ -1,16 +1,15 @@
-from fastapi import FastAPI
 import uvicorn
+from fastapi import FastAPI
 
-# from app.api.v1.router import api_router
-
+from src.api.v1.routes.router import api_router
 
 app = FastAPI(
-    title="FastAPI Template",
-    description="A template for building FastAPI applications.",
+    title="FastAPI",
+    description="API for finances control",
     version="0.1.0",
 )
 
-# app.include_router(api_router, prefix="/api/v1")
+app.include_router(api_router, prefix="/api/v1")
 
 
 def dev():
