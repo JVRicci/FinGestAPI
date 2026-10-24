@@ -11,9 +11,9 @@ class TransactionRepository:
     def create(self, data: TransactionCreate) -> Transaction:
         transaction = Transaction(**data.model_dump())
 
-        self.db.add(transaction)
+        self._db.add(transaction)
         self._db.commit()
-        self.db.refresh(transaction)
+        self._db.refresh(transaction)
 
         return transaction
 
