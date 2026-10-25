@@ -1,18 +1,19 @@
 from passlib.context import CryptContext
 
-password_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
-MAX_BCRYPT_PASSWORD_BYTES = 72
+password_context = CryptContext(
+    schemes=["bcrypt_sha256", "bcrypt"],
+    deprecated="auto",
+)
 
 
 def hash_password(password: str) -> str:
-    if len(password.encode("utf-8")) > MAX_BCRYPT_PASSWORD_BYTES:
-        raise ValueError(
-            f"Password exceeds maximum length of {MAX_BCRYPT_PASSWORD_BYTES} bytes."
-        )
     return password_context.hash(password)
 
 
 def verify_password(password: str, password_hash: str) -> bool:
-    if len(password.encode("utf-8")) > MAX_BCRYPT_PASSWORD_BYTES:
+    if (
+        password_context.identify(password_hash) == "bcrypt"
+        and len(password.encode("utf-8")) > 72
+    ):
         return False
     return password_context.verify(password, password_hash)

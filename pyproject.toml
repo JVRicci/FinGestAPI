@@ -17,6 +17,7 @@ alembic = "^1.18.4"
 psycopg = {extras = ["binary"], version = "^3.3.3"}
 pyjwt = "^2.12.1"
 passlib = {extras = ["bcrypt"], version = "^1.7.4"}
+bcrypt = ">=4.0.1,<5"
 python-multipart = "^0.0.27"
 email-validator = "^2.3.0"
 celery = "^5.6.3"
