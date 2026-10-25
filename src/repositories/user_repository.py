@@ -34,11 +34,11 @@ class UserRepository:
             select(User).filter_by(username=username)
         ).scalar_one_or_none()
 
+    def find_user_by_id(self, id):
+        return self._db.execute(select(User).filter_by(id=id)).scalar_one_or_none()
+
     def update(self, UserUpdate: UserUpdate, user: User) -> User:
         user_data = UserUpdate.model_dump(exclude_unset=True)
-
-        # if user_data.get("role") is not None:
-        #     user_data["role"] = UserRole(user_data["role"])
 
         with self._db.begin():
 

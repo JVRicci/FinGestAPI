@@ -14,7 +14,7 @@ class UserCreate(BaseModel):
     active: bool = Field(default=True)
 
 
-class UserUpdate(UserCreate):
+class UserUpdate(BaseModel):
     """Schema for updating a user."""
 
     username: str | None = Field(default=None, min_length=3, max_length=50)
@@ -22,3 +22,16 @@ class UserUpdate(UserCreate):
     password: str | None = Field(default=None, min_length=8)
     role: UserRole | None = None
     active: bool | None = None
+
+
+class UserResponse(BaseModel):
+    """Schema for user response."""
+
+    id: int
+    username: str
+    email: EmailStr
+    role: UserRole
+    active: bool
+
+    class Config:
+        orm_mode = True

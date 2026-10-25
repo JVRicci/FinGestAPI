@@ -95,6 +95,6 @@ class TestUserRepository:
         assert user_updated.id is not None
         assert user_updated.username == "user"
         assert user_updated.email == "user@example.com"
-        # assert user_updated.role is UserRole.USER
+        assert user_updated.role is UserRole.USER
         assert user_updated.password != user_data.password
         # assert verify_password(user_data.password, user_updated.password)
