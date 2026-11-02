@@ -5,7 +5,7 @@ class Settings(BaseSettings):
     """Application settings."""
 
     APP_NAME: str
-    ENV: str
+    ENVIROMENT: str
 
     DATABASE_URL: str
     REDIS_URL: str
